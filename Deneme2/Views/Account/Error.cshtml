@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<style>
+   
+   .images{     
+       padding: 20px;
+       margin-top:-10px;
+       position: relative;
+      margin-left:-130px;
+    }
+</style>
+<h2><font color="white">Üye Ol</font></h2>
+<div class="form-login box box--big">
+    <form action="Insert" method="post">
+        <div class="agile-field-txt">
+            <label><i class="fa fa-user" aria-hidden="true"></i> Kullanıcı Adı</label>
+            <input type="text" name="Name1" placeholder="Kullanıcı adını giriniz..." required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Şifre </label>
+            <input type="password" name="Password1" placeholder="Şifre giriniz..." required="" id="myInput" />
+        </div>
+        <div class="agile-field-txt">
+            <label>Seni daha iyi tanıyabilmemiz için bir kaç resim seç.</label>
+        </div>
+        <div class="images">
+            <table border=0 align="center">
+                <tr>
+                    <td><img src="~/images/car.jpg" width="212px" height="212px" class="selectable" name="Aksiyon"></td>
+                    <td><img src="~/images/komedi.jpg" width="212px" height="212px" class="selectable1" name="Komedi"></td>
+                    <td><img src="~/images/dram.jpg" width="212px" height="212px" class="selectable2" name="Dram"> </td>
+                </tr>
+                <tr>
+                    <td><img src="~/images/abdmovie.jpg" width="212px" height="212px" class="selectable3" name="Abdmovie"> </td>
+                    <td><img src="~/images/anim.jpg" width="212px" height="212px" class="selectable4" name="Animasyon"> </td>
+                    <td><img src="~/images/scienceFiction.jpg" width="212px" height="212px" class="selectable5" name="Bilimkurgu"></td>
+                </tr>
+                <tr>
+                    <td><img src="~/images/series.jpg" width="212px" height="212px" class="selectable6" name="Dizi"> </td>
+                    <td><img src="~/images/romanticc.jpg" width="212px" height="212px" class="selectable7" name="Romantik"></td>
+                    <td><img src="~/images/family.jpg" width="212px" height="212px" class="selectable8" name="AileFilmleri"> </td>
+                </tr>
+            </table>
+        </div>
+    <input type="submit" value="Üye Ol">
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="~/jquery.imgcheckbox.js"></script>
+<script>
+    $(".images img.selectable").imgCheckbox(); /*Birinci resim*/
+</script>
+<script>
+    $(".images img.selectable1").imgCheckbox(); /*İkinci resim*/
+</script>
+<script>
+    $(".images img.selectable2").imgCheckbox(); /*Üçüncü resim*/
+</script>
+<script>
+    $(".images img.selectable3").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable4").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable5").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable6").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable7").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable8").imgCheckbox();
+</script>
+
+  @*$(".agile-field-txt img.selectable8").imgCheckbox(); --> agile-field-txt tagının altındaki selectable8 nesnesine eriş.*@

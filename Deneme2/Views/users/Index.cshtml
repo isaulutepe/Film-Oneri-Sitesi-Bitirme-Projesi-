@@ -1,0 +1,33 @@
+﻿
+@using Deneme2.Models.Entity
+@model List<userlogin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Account/_MainLayout.cshtml";
+}
+ 
+<h2>Kullanıcı Tablosu</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var users in Model)
+        {
+            <tr>
+                <td>@users.username</td>
+                <td>@users.user_password</td>
+                <td><a href="/users/sil/@users.username" class="btn btn-danger">Sil</a></td>
+                <td><a href="/users/güncelle/@users.username" class="btn btn-success">Güncelle</a></td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/users/NewUser/" class="btn btn-primary">Yeni Kullanıcı Ekle</a>
+

@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "NewUser";
+    Layout = "~/Views/Account/_MainLayout.cshtml";
+}
+
+<h2>Yeni Kullanıcı Ekle</h2>
+<form class="form-group" method="POST" action="NewUser">
+    <div>
+        <label>Kullanıcı Adı</label>
+        <input type="Text" class="form-control" name="Name1" />          
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" class="form-control" name="Password1" />
+    </div>
+    <div>
+
+
+    </div>
+    <div>
+        <label><p>Kullanıcı için seçim yapınız.</p></label>
+
+    </div>
+    <div class="images">
+        <table border=0 align="center">
+            <tr>
+                <td><img src="~/images/car.jpg" width="212px" height="212px" class="selectable" name="Aksiyon"></td>
+                <td><img src="~/images/komedi.jpg" width="212px" height="212px" class="selectable1" name="Komedi"></td>
+                <td><img src="~/images/dram.jpg" width="212px" height="212px" class="selectable2" name="Dram"> </td>
+            </tr>
+            <tr>
+                <td><img src="~/images/abdmovie.jpg" width="212px" height="212px" class="selectable3" name="Abdmovie"> </td>
+                <td><img src="~/images/anim.jpg" width="212px" height="212px" class="selectable4" name="Animasyon"> </td>
+                <td><img src="~/images/scienceFiction.jpg" width="212px" height="212px" class="selectable5" name="Bilimkurgu"></td>
+            </tr>
+            <tr>
+                <td><img src="~/images/series.jpg" width="212px" height="212px" class="selectable6" name="Dizi"> </td>
+                <td><img src="~/images/romanticc.jpg" width="212px" height="212px" class="selectable7" name="Romantik"></td>
+                <td><img src="~/images/family.jpg" width="212px" height="212px" class="selectable8" name="AileFilmleri"> </td>
+            </tr>
+        </table>
+    </div>
+    <div style="margin-top:15px">
+        <center><button class="btn btn-info">Kullanıcı Ekle</button></center>
+    </div>
+
+</form>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="~/jquery.imgcheckbox.js"></script>
+<script>
+    $(".images img.selectable").imgCheckbox(); /*Birinci resim*/
+</script>
+<script>
+    $(".images img.selectable1").imgCheckbox(); /*İkinci resim*/
+</script>
+<script>
+    $(".images img.selectable2").imgCheckbox(); /*Üçüncü resim*/
+</script>
+<script>
+    $(".images img.selectable3").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable4").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable5").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable6").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable7").imgCheckbox();
+</script>
+<script>
+    $(".images img.selectable8").imgCheckbox();
+</script>

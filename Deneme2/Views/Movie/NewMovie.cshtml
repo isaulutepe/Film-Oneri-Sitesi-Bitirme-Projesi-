@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "NewMovie";
+    Layout = "~/Views/Account/_MainLayout.cshtml";
+}
+
+<h2>Yeni Film/Dizi Ekle</h2>
+
+@using (Html.BeginForm("NewMovie", "Movie", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+<form class="form-group" method="post" action="NewMovie">
+    <div>
+        <label>Film/Dizi Adı</label>
+        <input type="text" class="form-control" name="movieName" />
+    </div>
+    <div>
+        <label>Film/Dizi Bilgisi</label>
+        <input type="text" class="form-control" name="movieInformation" />
+    </div>
+    <div>
+        <label>Film/Dizi Resim</label>          
+                <input type="file" name="files" />                  
+        </div>
+    <div>
+        <label>Film/Dizi Kategori ID</label>
+        <input type="text" class="form-control" name="categoryId" />
+    </div>
+    <div style="margin-top:15px">     
+        <button class="btn btn-info">Film/Dizi Ekle</button>
+    </div>
+</form>
+} 

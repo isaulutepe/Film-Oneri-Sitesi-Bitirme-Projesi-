@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Deneme2.Models.NewCategory>
+
+@{
+    ViewBag.Title = "CategoryList";
+    Layout = "~/Views/Account/_MainLayout.cshtml";
+}
+
+@{
+    var category = (List<Deneme2.Models.NewCategory>)ViewData["MyData"];
+}
+
+
+<h2>Kategori Listesi</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Categori Id</th>
+        <th>Categori Name</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var item in category)
+        {
+            <tr>
+                <td>@item.categoryId</td>
+                <td>@item.categoryName</td>
+
+                <td><a href="/newCategory/sil/@item.categoryId " class="btn btn-danger">Sil</a></td>
+                <td><a href="/newCategory/guncelle/@item.categoryId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<a href="/newCategory/Index/" class="btn btn-primary">Yeni Kategori Ekle</a>
+
+
+

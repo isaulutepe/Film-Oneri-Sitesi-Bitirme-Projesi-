@@ -1,0 +1,33 @@
+﻿@using Deneme2.Models.Entity
+@model List<chooses>
+@{
+    ViewBag.Title = "chooses";
+    Layout = "~/Views/Account/_MainLayout.cshtml";
+}
+
+<h2>Kullanıcı Seçimleri</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>UserName</th>
+        <th>Seçim Id'leri</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var chose in Model)
+        {
+            <tr>
+                <td>@chose.username</td>
+                <td>@chose.chose</td>
+                <td><a href="/Chooses/sil/@chose.username" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Chooses/güncelle/@chose.username" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+
+

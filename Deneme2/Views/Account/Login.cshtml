@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<style>
+    .singup {
+        color: white;
+        text-decoration: none;
+        color: #fff;
+        margin: auto;
+        margin-top: 0em;
+        font-size: 1em;
+        letter-spacing: 2px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #fff;
+        border: 1px solid transparent;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+        .singup:hover {
+            color: #fd5c63;
+            background: transparent;
+        }
+</style>
+
+
+<h1>Giriş Yapınız</h1>
+<div class="form-login box box--big">
+    <form action="Verify" method="post">
+        <div class="agile-field-txt">
+            <label><i class="fa fa-user" aria-hidden="true"></i> Kullanıcı Adı</label>
+            <input type="text" name="Name" placeholder="Kullanıcı adını giriniz..." required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Şifre </label>
+            <input type="password" name="Password" placeholder="Şifre giriniz..." required="" id="myInput" />
+        </div>
+        <div class="agile-field-txt">
+            <label color="red">@Html.ActionLink("Üye Ol", "SingUp", "Account", null, new { @class = "singup" }) </label>
+        </div>
+        <input type="submit" value="Giriş">
+
+
+    </form>
+
+</div>

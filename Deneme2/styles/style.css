@@ -1,0 +1,133 @@
+
+nav.horizontal ul li {
+    display: inline-block;
+}
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+    font-size: 100%;
+    background: url(../images/back.jpg)no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    text-align: center;
+}
+.form-login {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    justify-content: center;
+}
+
+h1 {   /*Giriş yapınız yazısı*/
+    font-size: 3.2em;
+    font-weight: 300;
+    text-transform: capitalize;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    letter-spacing: 3px;
+    padding: 1em 1vw;
+    text-align: center;
+    margin-top:-30px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.form-login form {
+    position: relative;
+    max-width: 550px;
+    margin: 0 5vw;
+    padding: 3vw;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+
+.form-login label {
+    font-size: 16px;
+    color: #fff;
+    float: left;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.agile-field-txt { /*Kulllanıcı adı, şifre labellarıın özellikleri.*/
+    flex-basis: 100%;
+    -webkit-flex-basis: 100%;
+    margin-bottom: 1.5em;
+    clear: both;
+}
+
+.form-login label i { /*Sembollerin oldugu etiket*/
+    font-size: 1.1em;
+    margin-right: 3px;
+    color: #fd5c63;
+}
+
+.form-login input[type="text"],  /*Kullanıcı adı alanı*/
+.form-login input[type="password"] { /*Şifre alma alanı*/
+    width: 100%;
+    color: #fff;
+    outline: none;
+     font-size: 15px;
+    letter-spacing: 2px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border: none;
+     border: 1px solid #eee;
+	 border-radius: 30px;
+    -webkit-appearance: none;
+	font-family: 'Source Sans Pro', sans-serif;
+    background: transparent;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */  /*Butonla alakalı çözemedim.*/
+  color: #aaa;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #aaa;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #aaa;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #aaa;
+}
+.form-login input[type=submit] {  /*Butonların fiziksel kontol noktası*/
+    color: #fff;
+    width: 200px;
+	margin: auto;
+    padding: 0.7em 0;
+    margin-top: 0em;
+    font-size: 1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+     border-radius: 30px;
+	 font-weight: 600;
+    background: #fd5c63;
+    color: #fff;
+    border: 1px solid transparent;
+	font-family: 'Source Sans Pro', sans-serif;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;    
+}
+.form-login input[type=submit]:hover {  /* //Buton üzerine gelince gerçekleşen olayların ayarları */
+    border: 1px solid #fd5c63;
+    color: #fd5c63;
+	background: transparent;
+}
+
+
+
+

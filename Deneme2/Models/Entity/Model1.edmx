@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyWebSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MyWebSite.dbo.category' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="category">
+          <Property Name="id" Type="tinyint" />
+          <Property Name="name" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyWebSite.dbo.chooses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="chooses">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="chose" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyWebSite.dbo.message' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="message" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyWebSite.dbo.movies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="movies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="tinyint" Nullable="false" />
+          <Property Name="movieName" Type="varchar" MaxLength="50" />
+          <Property Name="movieInformation" Type="varchar" MaxLength="500" />
+          <Property Name="image" Type="varchar" MaxLength="50" />
+          <Property Name="categoryId" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyWebSite.dbo.userlogin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="userlogin">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="user_password" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="MyWebSiteModelStoreContainer">
+          <EntitySet Name="chooses" EntityType="Self.chooses" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [chooses].[username] AS [username], 
+    [chooses].[chose] AS [chose]
+    FROM [dbo].[chooses] AS [chooses]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="message" EntityType="Self.message" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [message].[id] AS [id], 
+    [message].[ad] AS [ad], 
+    [message].[email] AS [email], 
+    [message].[message] AS [message]
+    FROM [dbo].[message] AS [message]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="movies" EntityType="Self.movies" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [movies].[id] AS [id], 
+    [movies].[movieName] AS [movieName], 
+    [movies].[movieInformation] AS [movieInformation], 
+    [movies].[image] AS [image], 
+    [movies].[categoryId] AS [categoryId]
+    FROM [dbo].[movies] AS [movies]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="userlogin" EntityType="Self.userlogin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [userlogin].[username] AS [username], 
+    [userlogin].[user_password] AS [user_password]
+    FROM [dbo].[userlogin] AS [userlogin]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyWebSiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="chooses">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="chose" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="message1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="movies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Byte" Nullable="false" />
+          <Property Name="movieName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="movieInformation" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="categoryId" Type="Byte" />
+        </EntityType>
+        <EntityType Name="userlogin">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MyWebSiteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="chooses" EntityType="Self.chooses" />
+          <EntitySet Name="message" EntityType="Self.message" />
+          <EntitySet Name="movies" EntityType="Self.movies" />
+          <EntitySet Name="userlogin" EntityType="Self.userlogin" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyWebSiteModelStoreContainer" CdmEntityContainer="MyWebSiteEntities">
+          <EntitySetMapping Name="chooses">
+            <EntityTypeMapping TypeName="MyWebSiteModel.chooses">
+              <MappingFragment StoreEntitySet="chooses">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="chose" ColumnName="chose" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="message">
+            <EntityTypeMapping TypeName="MyWebSiteModel.message">
+              <MappingFragment StoreEntitySet="message">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="message1" ColumnName="message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="movies">
+            <EntityTypeMapping TypeName="MyWebSiteModel.movies">
+              <MappingFragment StoreEntitySet="movies">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="movieName" ColumnName="movieName" />
+                <ScalarProperty Name="movieInformation" ColumnName="movieInformation" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userlogin">
+            <EntityTypeMapping TypeName="MyWebSiteModel.userlogin">
+              <MappingFragment StoreEntitySet="userlogin">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

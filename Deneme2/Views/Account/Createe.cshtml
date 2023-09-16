@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Deneme2.Models.Movies>
+
+
+@{
+    ViewBag.Title = "Createe";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+@{
+    var movies = (List<Deneme2.Models.Movies>)ViewData["MyData"]; // Cast the list
+}
+
+
+  
+<nav>
+    <div class="logo">
+        <a href="#">Ne<em>Izlesem</em></a>
+    </div>
+
+</nav>
+<div id="video-container">
+    <div class="video-overlay"></div>
+    <div class="video-content">
+        <div class="inner">
+            <h1>Hoşgeldin <em>Iste Filmlerin</em></h1>
+            <p>Sana Ozel Sectiklerimiz</p>
+            <p>Sayfayı yukari kaydirman yeterli</p>
+            <div class="scroll-icon">
+                <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="~/img/scroll-icon.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <video autoplay="" loop="" muted>
+        <!-- video otomatik oynatma -->
+        <source src="~/video.mp4" type="video/mp4" /> <!--Video -->
+    </video>
+</div>
+<div class="full-screen-portfolio" id="portfolio">
+
+    <div class="container-fluid">
+
+        @foreach (var item in movies)
+        {
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <a href="@item.image" data-lightbox="image-1">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <h1>@item.movieName</h1> <!--Birinci resim ve bilgileri-->
+                                    <p>@item.movieInformation</p>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <img src="@item.image">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        }
+
+
+    </div>
+</div>
+
+<footer>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <p>
+                Umarım icerikleri begenmissinizdir.
+
+                | Designed by Isa Ulutepe |
+                <label>@Html.ActionLink("Yeni Şeyler Keşfet", "RandomMovie", "Account", null, new { @class = "singup" }) </label>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+

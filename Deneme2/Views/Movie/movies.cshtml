@@ -1,0 +1,43 @@
+﻿@using Deneme2.Models.Entity
+@model List<movies>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Account/_MainLayout.cshtml";
+}
+
+<h2>Film Ve Dizi Tablosu</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Movie Id</th>
+        <th>Movie Name</th>
+        <th>Movie Information</th>
+        <th>Movie İmage</th>
+        <th>Movie CategoriyId</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var movies in Model)
+        {
+            <tr>
+                <td>@movies.id</td>
+                <td>@movies.movieName</td>
+                <td>@movies.movieInformation</td>
+                <td><img src=@movies.image width="150px" height="80px"></td>
+                <td>@movies.categoryId</td>
+                <td><a href="/Movie/sil/@movies.id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Movie/güncelle/@movies.id" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<div>
+    
+</div>
+<a href="/Movie/NewMovie/" class="btn btn-primary">Yeni Film/Dizi Ekle</a>
+
+
+
+
